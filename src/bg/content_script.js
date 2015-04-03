@@ -69,16 +69,22 @@ function addAds(elms, width, height) {
 
 		arrOverlayPos.push(pos);
 
-		if ($(val).is("iframe,embed"))
+		
+		if ($(val).is("iframe"))
 		{
-			arrAds.push($(val).parentsUntil("div"));
+			if ($(val).contents() != undefined) {
+				numAds = numAds + 1;
+				$(val).contents().find('body').html(adTagStr);
+			} else {
+				console.log('undefined iframe content found');
+				console.log(val);
+			}
+			
 		} else {
-			arrAds.push(val);	
+			numAds = numAds + 1;
+			$(val).html(adTagStr);
 		}
 	});
-
-	numAds = numAds + arrAds.length;
-	$(arrAds).html(adTagStr);
 }
 
 function ReplaceAds() {	

@@ -14,5 +14,6 @@ chrome.extension.onMessage.addListener(
 
 chrome.browserAction.onClicked.addListener(function(tab) {
 	chrome.tabs.insertCSS(null, {file: "src/bg/content_script.css"});
+	chrome.tabs.executeScript(null, {file: "js/jquery/jquery.min.js"});
 	chrome.tabs.executeScript(null, {file: "src/bg/content_script.js"});
 });
