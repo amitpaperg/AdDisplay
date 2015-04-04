@@ -112,3 +112,11 @@ function ReplaceAds() {
 
 ReplaceAds();
 
+/*
+function ShowDialog() {
+	$("body").append('<div id="helperWindow"><span>Campaign ID:</span><input type="text" id="byotCID" name="campaignID"><br><input type="button" id="byotSeeAd" value="See Ad"></div>');
+}
+
+ShowDialog();
+*/
+
